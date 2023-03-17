@@ -1,3 +1,14 @@
+const menu =document.querySelector(".menu")
+const menuBar=document.querySelector(".collapse")
+menu.addEventListener("click", function downMenu() {
+  
+  menuBar.classList.toggle("show")
+} )
+
+
+
+
+
 const pageRej = document.querySelector(".animate-down");
 const closeBtn = document.querySelector(".fa-solid ");
 const aboutWarrper = document.getElementById("about-warpper");
@@ -35,6 +46,33 @@ function changPagePortfolio() {
   }, 500);
 }
 
+const closeBlog = document.querySelector(".close-blog ");
+const BlogPage = document.getElementById("Blog-page");
+const Bloglink = document.getElementById("nav-link4");
+Bloglink.addEventListener("click", changPageBlog);
+function changPageBlog() {
+  pageRej.classList.add("down-animete");
+  setTimeout(() => {
+    BlogPage.classList.add("active");
+  }, 500);
+}
+
+
+const closeContact = document.querySelector(".close-contact ");
+const contactPage = document.getElementById("contact-page");
+const contactlink = document.getElementById("nav-link5");
+contactlink.addEventListener("click", changPagecontact);
+function changPagecontact() {
+  pageRej.classList.add("down-animete");
+  setTimeout(() => {
+    contactPage.classList.add("active");
+  }, 500);
+}
+
+
+
+
+
 
 function closePage() {
   pageRej.classList.remove("down-animete");
@@ -43,11 +81,15 @@ function closePage() {
     aboutWarrper.classList.remove("active");
     resumePage.classList.remove("active");
     PortfolioPage.classList.remove("active");
+    BlogPage.classList.remove("active");
+    contactPage.classList.remove("active")
   }, 800);
 }
 closeBtn.addEventListener("click", closePage);
 closeRusume.addEventListener("click", closePage);
 closePortfolio.addEventListener("click", closePage);
+closeBlog.addEventListener("click", closePage);
+closeContact.addEventListener("click", closePage)
 
 
 
